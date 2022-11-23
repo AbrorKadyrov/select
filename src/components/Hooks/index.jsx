@@ -1,5 +1,4 @@
-import { Container } from "./style";
-import { useState, useEffect, useReducer } from "react";
+import { useState, useReducer } from "react";
 import { reduce } from "./reducer";
 
 const Hooks = () => {
