@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Card from "../components/Card";
-import Classes from "../components/Classes";
 import Hooks from "../components/Hooks";
 import { Container } from "./style";
 
