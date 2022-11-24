@@ -6,10 +6,10 @@ const Hooks = () => {
 
   return (
     <div>
-      <h1>Student List {data.length} </h1>
+      <h1>Student List {data.student.length} </h1>
       <hr />
 
-      {data.map((value) => {
+      {data.student.map((value) => {
         return (
           <h1 key={value.id}>
             id: {value.id}- Name:{value.name}{" "}
