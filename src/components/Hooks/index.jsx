@@ -1,30 +1,26 @@
-import { useState, useReducer } from "react";
-import { reduce } from "./reducer";
+import { useContext } from "react";
+import { StudentContext } from "../../context";
 
 const Hooks = () => {
-  const [data, dispatch] = useReducer(reduce, { count: 1 });
-  const [option, setOption] = useState(5);
-
-  const onSelect = ({ target: { value } }) => {
-    console.log(value);
-    setOption(Number(value));
-  };
+  const [data, dispatch] = useContext(StudentContext);
 
   return (
     <div>
-      <h1>UseReducer</h1>
-      <h1>Count: {data.count}</h1>
-      <button onClick={() => dispatch({ type: "plus" })}>+</button>
-      <button onClick={() => dispatch({ type: "minus" })}>-</button>
-      <button onClick={() => dispatch({ type: "byamount", payload: option })}>
-        {option}
-      </button>
+      <h1>Student List {data.length} </h1>
+      <hr />
 
-      <select defaultValue={5} onChange={onSelect}>
-        <option value={5}> 5</option>
-        <option value={10}>10</option>
-        <option value={15}>15</option>
-      </select>
+      {data.map((value) => {
+        return (
+          <h1 key={value.id}>
+            id: {value.id}- Name:{value.name}{" "}
+            <button
+              onClick={() => dispatch({ type: "delete", payload: value.id })}
+            >
+              delete
+            </button>
+          </h1>
+        );
+      })}
     </div>
   );
 };

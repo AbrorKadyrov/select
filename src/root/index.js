@@ -1,18 +1,16 @@
-import React, { Component } from "react";
-import Hooks from "../components/Hooks";
+import React, { Component, useState } from "react";
+import Body from "../components/Hooks";
+import { Navbar } from "../components/Navbar";
+import { list } from "../mock/student";
 import { Container } from "./style";
 
-export default class Root extends Component {
-  render() {
-    return (
-      <>
-        <h1>Comparison</h1>
-        <Container>
-          {/* <Classes /> */}
-          <Hooks />
-          {/* {data.map((val) => val && <Card />)} */}
-        </Container>
-      </>
-    );
-  }
-}
+export const Root = () => {
+  return (
+    <>
+      <Container>
+        <Navbar />
+        <Body />
+      </Container>
+    </>
+  );
+};
